@@ -27,4 +27,4 @@ async function show(req, res) {
 //         const data = await results.json()
 //         res.render('')
 //     }
-}
+// }
