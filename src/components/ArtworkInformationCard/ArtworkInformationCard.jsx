@@ -1,3 +1,15 @@
-export default function ArtworkListCard() {
-    return <h2>Artwork Information Card</h2>
+
+import { Component } from "react";
+import ArtworkInformationItem from "../ArtworkInformationItem/ArtworkInformationItem";
+
+export default function ArtworkInformationCard() {
+    
+    
+    return (
+        <main className="ArtworkInformationCard" >
+            <ArtworkInformationItem />
+
+
+
+        </main>)
 }

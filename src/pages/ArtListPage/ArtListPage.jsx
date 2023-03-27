@@ -1,4 +1,4 @@
-
+import ArtworkInformationCard from '../../components/ArtworkInformationCard/ArtworkInformationCard';
 import { useState, useEffect } from 'react';
 
 
@@ -19,7 +19,7 @@ export default function ArtPage() {
     console.log(artInfo)
     return (
         <main>
-            
+            <ArtworkInformationCard />
         </main>
         )
     }
