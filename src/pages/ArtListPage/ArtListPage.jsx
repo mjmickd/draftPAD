@@ -18,9 +18,8 @@ export default function ArtPage() {
     
     console.log(artInfo)
     return (
-        <>
-        <h1>ArtPage</h1>
-        
-        </>
+        <main>
+            
+        </main>
         )
     }
