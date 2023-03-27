@@ -1,5 +1,17 @@
 /* CSS Custom Properties */
 :root {
+  --pakistan-green: #143109;
+  --reseda-green: #5f7044;
+  --sage: #AAAE7F;
+  --beige: #D0D6B3;
+  --seasalt: #f7f7f7;
+  --white-smoke: #f3f3f3;
+  --anti-flash-white: #Efefef;
+
+
+}
+
+:root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
