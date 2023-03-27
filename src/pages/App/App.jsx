@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import ArtPage from '../ArtPage/ArtPage';
+import ArtPage from '../ArtListPage/ArtListPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import NavBar from '../../components/NavBar/NavBar';
