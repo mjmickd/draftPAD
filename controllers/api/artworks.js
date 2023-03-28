@@ -8,6 +8,8 @@ module.exports={
     search
 };
 
+
+
 async function index(req, res) {
     try {
         const allArt = await Art.find({});
@@ -25,6 +27,8 @@ async function show(req, res) {
 //     try {
 //         const results = await fetch(`${CHICAGO_API_URL}${req.body.search}`);
 //         const data = await results.json()
+//         console.log('Search Results')
+
 //         res.render('')
 //     }
 // }

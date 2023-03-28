@@ -1,5 +1,6 @@
 
 import { Component } from "react";
+
 import ArtworkInformationItem from "../ArtworkInformationItem/ArtworkInformationItem";
 
 export default function ArtworkInformationCard() {
