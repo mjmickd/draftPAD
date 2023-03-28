@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 
-export default function ArtworkItem() {
+export default function ArtworkItem({setArtInfo}) {
     const [artworkForm, setArtworkForm] = useState([])
 
     // async function getImage(req, res) {
