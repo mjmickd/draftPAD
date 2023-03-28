@@ -1,22 +1,12 @@
-import ArtworkInformationCard from '../../components/ArtworkInformationCard/ArtworkInformationCard';
+import ArtworkInformationCard from '../../components/ArtworkList/ArtworkList';
 import { useState, useEffect } from 'react';
 
 
-export default function ArtPage() {
-    const [artInfo, setArtInfo] = useState();
+export default function ArtPage({artInfo}) {
+    console.log('ART INFO', artInfo)
+   
     
-    useEffect(() => {
-        fetch('https://api.artic.edu/api/v1/artworks?limit=100').then((res) => res.json())
-        .then((data) => {
-            setArtInfo(data);
-        });
-    }, []);
 
-    // Axios.get('https://api.artic.edu/api/v1/artworks').then((res) => {
-    //     setArtInfo(res.title);
-    // });
-    
-    console.log(artInfo)
     return (
         <main>
             <ArtworkInformationCard />

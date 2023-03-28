@@ -10,15 +10,16 @@ import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [artInfo, setArtInfo] = useState([]);
 
   return (
     <main className="App">
       { user ?
           <>
-            <NavBar user={user} setUser={setUser} />
+            <NavBar user={user} setUser={setUser} setArtInfo={setArtInfo} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/art" element={<ArtPage />} />
+              <Route path="/art" element={<ArtPage artInfo={artInfo} />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/profile/wishlist" element={<WishlistPage />} />
             </Routes>
