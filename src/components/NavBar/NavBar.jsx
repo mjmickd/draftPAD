@@ -23,6 +23,8 @@ export default function NavBar({ user, setUser, setArtInfo }) {
 
   return (
     <nav>
+      <Link to='/'>Home</Link>
+      &nbsp; | &nbsp; 
       <Link to="/art">Art Work</Link>
       &nbsp; | &nbsp;
       <Link to="/profile">{user.name} profile</Link>

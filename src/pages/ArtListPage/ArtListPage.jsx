@@ -1,5 +1,6 @@
-import ArtworkInformationCard from '../../components/ArtworkList/ArtworkList';
-import { useState, useEffect } from 'react';
+import ArtworkList from '../../components/ArtworkList/ArtworkList';
+import * as artworkAPI from '../../utilities/artworks-api'
+import { useState } from 'react';
 
 
 export default function ArtPage({artInfo}) {
@@ -9,7 +10,7 @@ export default function ArtPage({artInfo}) {
 
     return (
         <main>
-            <ArtworkInformationCard />
+            <ArtworkList />
         </main>
         )
     }
