@@ -27,7 +27,7 @@ async function searchApi(req,res) {
     try {
         const results = await fetch(`${CHICAGO_API_URL}?title=${req.query.q}`);
         const data = await results.json()
-        res.json(data);
+        res.json(data.data);
     } catch (err) {
         res.status(400).json(err);
     }

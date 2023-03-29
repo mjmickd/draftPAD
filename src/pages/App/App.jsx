@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import LandingPage from "../LandingPage/LandingPage";
 import AuthPage from '../AuthPage/AuthPage';
-import ArtPage from '../ArtListPage/ArtListPage';
+import ArtListPage from '../ArtListPage/ArtListPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import NavBar from '../../components/NavBar/NavBar';
@@ -21,7 +21,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<LandingPage />} />
-              <Route path="/art" element={<ArtPage artInfo={artInfo} />} />
+              <Route path="/art" element={<ArtListPage  artInfo={artInfo} />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/profile/wishlist" element={<WishlistPage />} />
             </Routes>

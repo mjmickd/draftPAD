@@ -1,39 +1,54 @@
-import * as artworksAPI from "../../utilities/artworks-api";
+
+
 import { useState } from "react";
+import * as artworksAPI from "../../utilities/artworks-api";
 
 
 
-export default function ArtworkItem({setArtInfo}) {
-    const [artworkForm, setArtworkForm] = useState([])
 
-    // async function getImage(req, res) {
-    //   try{
-    //     const APIImage = req.params.image_id
-    //     const image = fetch(`${BASE_URL}/search?q=${image_id}`)
-    //     .then(res => res.json());
-    //   } 
-    //     catch (err) {
-    //         res.status(400).json(err);
-    //     }
-    // }
+export default function ArtworkItem({artwork}) {
+    const [img, setImg] = useState([])
+    const image1 = "https://www.artic.edu/iiif/2/"
+    const image3 = "/full/843,/0/default.jpg";
+    const image2 = artwork.image_id
+
+    console.log(artwork.image_id, "testing null")
+    if (artwork.image_id === null) return null
+
+    console.log(`${image1}${image2}${image3}`, artwork.title)
+
+    const placeholder =  "https://e7.pngegg.com/pngimages/49/270/png-clipart-happy-emoji-smiley-emoticon-black-and-white-computer-icons-smiley-face-s-white-face-thumbnail.png"
     
-    async function handleSubmit(evt){
-        evt.preventDefault()
-        const artResults = await artworksAPI.searchArtApi(artworkForm) 
-        setArtInfo(artResults);
-        setFormData("")
+    function onImageError (evt) {
+        console.log('image error')
+        evt.target.src = placeholder;
     }
-   
+    
     
     return (
-    <button className='artworkFormButton'>
-        <form onSubmit="handleSubmit">
-        <img src="" alt="" />
-        <h3>Title</h3>
-        <h4>Artist</h4>
-        <p>description etc.</p>
+        <>
+        <form>
+        <h1>{artwork.title}</h1>
+        <img src={`${image1}${image2}${image3}`} alt="" 
+
+        style={{width:'5vw', height:'5vw'}}
+        onError={onImageError}
+        />
+        <ul>
+            <li>{artwork.artist_title}</li>
+            <li></li>
+        </ul>
         </form>
-    </button>
+        </>
+    // <button className='artworkFormButton' >
+    // {/* // onClick={() => handleArtworkDetailPage()} */}
+    //     <form onSubmit="handleSubmit">
+    //     <img src="" alt="" />
+    //     <h3>Title</h3>
+    //     <h4>Artist</h4>
+    //     <p>description etc.</p>
+    //     </form>
+    // </button>
             
     )
 }
