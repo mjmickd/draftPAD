@@ -9,7 +9,7 @@ export default function ArtPage({artInfo}) {
         <>
         <h1>Art Page</h1>
         {artInfo.map((artwork) => {
-            return <ArtworkItem key={artwork.id} artwork={artwork} />;
+            return <ArtworkItem key={artwork.id} artwork={artwork}/>;
           })}
         </>
         )

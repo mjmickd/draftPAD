@@ -6,7 +6,7 @@ module.exports={
     index,
     show,
     searchApi,
-    addToFavorites,
+    // addToFavorites,
 };
 
 
@@ -21,7 +21,7 @@ async function index(req, res) {
 };
 
 async function show(req, res) {
-    console.log('Show is working')
+    const art = await Art.findOne({})
 }
 
 async function searchApi(req,res) {
@@ -34,30 +34,37 @@ async function searchApi(req,res) {
     }
 }
 
-async function addToFavorites(req,res) {
-    try { 
-        const artworkInDb = await Collection.exists({art: req.body.cocktailId})
-        if(artworkInDb) {
-            Art.findOne({artId: req.body.artId}, function(err, cocktail) {
-
-                if (art.favorites.some(f => f.equals(req.user._id))) {
-                    res.redirect('/c/landing');
-                } else {
-                    cocktail.favorites.push(req.user._id)
-                    cocktail.save(function(err) { 
-                        if (err) return res.redirect ('/cocktails/search');
-                        res.redirect('/cocktails/landing');
-                })
-                }
-            })
-        } else {
-            const cocktail = new Cocktail(req.body);
-            cocktail.favorites.push(req.user._id)
-            cocktail.save(function(err) { 
-                if (err) return res.redirect ('/cocktails/search');
-                res.redirect('/cocktails/landing');
-            })
-        }
-    } catch(err) {
+async function addToCollection(req,res) {
+    try{
+        const artworkInDb = await Art.exists({art: req.body.})
     }
 }
+
+//  async function addToFavorites(req,res) {
+//    try { 
+//         const artworkInDb = await Art.exists({art: req.body.artworkId})
+
+// //         if(artworkInDb) {
+// //             Art.findOne({artId: req.body.artId}, function(err, cocktail) {
+
+// //                 if (art.favorites.some(f => f.equals(req.user._id))) {
+// //                     res.redirect('/c/landing');
+// //                 } else {
+// //                     cocktail.favorites.push(req.user._id)
+// //                     cocktail.save(function(err) { 
+// //                         if (err) return res.redirect ('/cocktails/search');
+// //                         res.redirect('/cocktails/landing');
+// //                 })
+// //                 }
+// //             })
+// //         } else {
+// //             const cocktail = new Cocktail(req.body);
+// //             cocktail.favorites.push(req.user._id)
+// //             cocktail.save(function(err) { 
+// //                 if (err) return res.redirect ('/cocktails/search');
+// //                 res.redirect('/cocktails/landing');
+// //             })
+// //         }
+//   } catch(err) {
+//     }
+//  }

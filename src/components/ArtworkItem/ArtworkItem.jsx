@@ -7,7 +7,7 @@ import * as artworksAPI from "../../utilities/artworks-api";
 
 
 export default function ArtworkItem({artwork}) {
-    const [img, setImg] = useState([])
+    const [collection, setCollection] = useState([])
     const image1 = "https://www.artic.edu/iiif/2/"
     const image3 = "/full/843,/0/default.jpg";
     const image2 = artwork.image_id
@@ -23,6 +23,13 @@ export default function ArtworkItem({artwork}) {
         console.log('image error')
         evt.target.src = placeholder;
     }
+
+    async function handleSubmit(evt) {
+        evt.preventDefault()
+        const myCollection = await artworksAPI.searchArtApi(collection)
+        artwork(myCollection)
+        setCollection("")
+    }
     
     
     return (
@@ -34,10 +41,8 @@ export default function ArtworkItem({artwork}) {
         style={{width:'5vw', height:'5vw'}}
         onError={onImageError}
         />
-        <ul>
-            <li>{artwork.artist_title}</li>
-            <li></li>
-        </ul>
+        <button type="submit" >In My Collection</button>
+        <button type="submit">Borrow Art Piece</button>
         </form>
         </>
     // <button className='artworkFormButton' >
