@@ -7,6 +7,7 @@ import * as artworksAPI from "../../utilities/artworks-api";
 
 export default function NavBar({ user, setUser, setArtInfo }) {
   const [formData, setFormData] = useState("");
+  
   function handleLogOut() {
     userService.logOut();
     setUser(null);

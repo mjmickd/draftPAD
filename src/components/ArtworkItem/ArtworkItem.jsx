@@ -1,5 +1,7 @@
-//import * as artworksAPI from "../../utilities/artworks-api";
+import * as artworksAPI from "../../utilities/artworks-api";
+import * as collectionsAPI from "../../utilities/collections-api";
 import './ArtworkItem.css';
+
 
 export default function ArtworkItem({artwork, showButton}) {
     const image1 = "https://www.artic.edu/iiif/2/"
@@ -20,18 +22,21 @@ export default function ArtworkItem({artwork, showButton}) {
         evt.target.src = placeholder;
     }
 
-    function handleAddToCollection() {
+    async function handleAddToCollection() {
     const formData = {
         name: artwork.title,
         image: imageURL, 
-        id: artwork.id,
+        apiID: artwork.id,
         artist: artwork.artist_title,
         yearCreated: artwork.date_end,
         styleTitle: artwork.style_title,
         typeOfArt: artwork.medium_display,
         size: artwork.dimensions, 
         }
-        console.log(formData)
+        const newPiece = await artworksAPI.createArtwork(formData)
+        // const myCollection = await artworksAPI.createArtwork(``)
+        console.log(newPiece)
+        const addedCollection = await collectionsAPI.addToCollection()
     }
     
 

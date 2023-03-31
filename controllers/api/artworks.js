@@ -6,6 +6,7 @@ module.exports={
     index,
     show,
     searchApi,
+    create,
     // addToFavorites,
 };
 
@@ -33,6 +34,20 @@ async function searchApi(req,res) {
         res.status(400).json(err);
     }
 }
+async function create(req,res) {
+    try {
+        const newArtwork = await Art.create(req.body)
+        console.log('Create')
+        res.json(newArtwork);
+    } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
+    }
+}
+
+
+
+
 
 // async function addToCollection(req,res) {
 //     try{

@@ -8,4 +8,6 @@ export function viewCollection() {
 }
 
 //Add art to your collection 
-export function addToCollection()
+export function addToCollection() {
+    return sendRequest(`${BASE_URL}/_id:${artworks._id}`)
+}
