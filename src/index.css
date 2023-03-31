@@ -1,8 +1,6 @@
 /* CSS Custom Properties */
 :root {
-  --pakistan-green: #143109;
   --reseda-green: #5f7044;
-  --sage: #AAAE7F;
   --beige: #D0D6B3;
   --seasalt: #f7f7f7;
   --white-smoke: #f3f3f3;
@@ -16,8 +14,8 @@
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --sage: #AAAE7f;
+  --pakistan-green: #5f7044;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -33,7 +31,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: var(--sage);
   padding: 2vmin;
   height: 100vh;
 }
@@ -98,7 +96,7 @@ code {
 }
 
 p.error-message {
-  color: var(--orange);
+  color: var(--pakistan-green);
   text-align: center;
 }
 
@@ -126,14 +124,14 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--pakistan-green);
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--pakistan-green);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -156,7 +154,7 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--sage);
 }
 
 button[type="submit"] {

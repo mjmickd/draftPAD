@@ -34,11 +34,19 @@ async function searchApi(req,res) {
     }
 }
 
-async function addToCollection(req,res) {
-    try{
-        const artworkInDb = await Art.exists({art: req.body.})
-    }
-}
+// async function addToCollection(req,res) {
+//     try{
+//         const artworkInDb = await Art.exists({art: req.body.artworkId})
+
+//         if (artworkInDb) {
+//             Art.findOne({artId: req.body.artId}, function(err, artwork))
+//         }
+//     }
+// }
+
+
+
+
 
 //  async function addToFavorites(req,res) {
 //    try { 

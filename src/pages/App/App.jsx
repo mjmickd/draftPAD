@@ -12,6 +12,7 @@ import './App.css';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [artInfo, setArtInfo] = useState([]);
+  const [collection, setCollection] = useState([])
 
   return (
     <main className="App">
@@ -21,7 +22,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<LandingPage />} />
-              <Route path="/art" element={<ArtListPage  artInfo={artInfo} />} />
+              <Route path="/art" element={<ArtListPage  artInfo={artInfo} setCollection={setCollection}/>} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/profile/wishlist" element={<WishlistPage />} />
             </Routes>

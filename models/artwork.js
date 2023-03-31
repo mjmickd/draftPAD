@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const artworkSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
     image: {
         type: String,
         required: true
     },
     id: {
-        type: String,
-        required: true
-    },
-    name: {
         type: String,
         required: true
     },
@@ -22,25 +22,20 @@ const artworkSchema = new Schema({
         type: Number,
         required: true
     }, 
+    styleTitle: {
+        type: String, 
+        required: true
+    },
+    mediumDisplay: {
+        type: String, 
+        required: true
+    },
     size: {
         type: String,
         required: true
-    },
-    typeOfArt: {
-        type: String,
-        required: true
-    },
-    available: {
-        type: String,
-        enum: ['Available', 'Unavailable'],
-        default: 'Available'
-    }, 
-    // favorites: [{
-    //     type:Schema.Types.ObjectId,
-    //     ref: 'User'
-    // }]
+    }
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model("artwork", artworkSchema);
+module.exports = mongoose.model("Artwork", artworkSchema);

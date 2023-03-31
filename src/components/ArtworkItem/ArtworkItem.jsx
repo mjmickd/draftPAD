@@ -1,16 +1,12 @@
+//import * as artworksAPI from "../../utilities/artworks-api";
+import './ArtworkItem.css';
 
-
-import { useState } from "react";
-import * as artworksAPI from "../../utilities/artworks-api";
-
-
-
-
-export default function ArtworkItem({artwork}) {
-    const [collection, setCollection] = useState([])
+export default function ArtworkItem({artwork, showButton}) {
     const image1 = "https://www.artic.edu/iiif/2/"
     const image3 = "/full/843,/0/default.jpg";
-    const image2 = artwork.image_id
+    const image2 = artwork.image_id;
+    const imageURL = `${image1}${image2}${image3}`
+
 
     console.log(artwork.image_id, "testing null")
     if (artwork.image_id === null) return null
@@ -24,27 +20,52 @@ export default function ArtworkItem({artwork}) {
         evt.target.src = placeholder;
     }
 
-    async function handleSubmit(evt) {
-        evt.preventDefault()
-        const myCollection = await artworksAPI.searchArtApi(collection)
-        artwork(myCollection)
-        setCollection("")
+    function handleAddToCollection() {
+    const formData = {
+        name: artwork.title,
+        image: imageURL, 
+        id: artwork.id,
+        artist: artwork.artist_title,
+        yearCreated: artwork.date_end,
+        styleTitle: artwork.style_title,
+        typeOfArt: artwork.medium_display,
+        size: artwork.dimensions, 
+        }
+        console.log(formData)
     }
     
+
+    function handleAddToWishlist() {
+
+    }
     
     return (
+        <div className="ArtForm">
         <>
-        <form>
         <h1>{artwork.title}</h1>
-        <img src={`${image1}${image2}${image3}`} alt="" 
+        <img src={`${imageURL}`} alt="" 
 
-        style={{width:'5vw', height:'5vw'}}
+        style={{width:'20vw', height:'20vw', alignItems:'left', }}
         onError={onImageError}
         />
-        <button type="submit" >In My Collection</button>
-        <button type="submit">Borrow Art Piece</button>
-        </form>
+        <ul>
+            <li>{artwork.artist_title}</li>
+            <li>{artwork.date_end}</li>
+            <li>{artwork.style_title}</li>
+            <li>{artwork.medium_display}</li>
+            <li>{artwork.artwork_type_title}</li>
+            <li>{artwork.dimensions}</li>
+        </ul>
+        {showButton ? 
+        <>
+            <button className="art-btn" onClick={() => handleAddToCollection()}>In My Collection</button>
+            <button className="art-btn" onClick={() => handleAddToWishlist()}>Add To Wishlist</button>
         </>
+        :
+        ""
+        }
+        </>
+        </div>
     // <button className='artworkFormButton' >
     // {/* // onClick={() => handleArtworkDetailPage()} */}
     //     <form onSubmit="handleSubmit">
