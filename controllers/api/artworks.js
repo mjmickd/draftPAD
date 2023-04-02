@@ -45,6 +45,15 @@ async function create(req,res) {
     }
 }
 
+async function createWishlist(req,res) {
+    try {
+        const newWishlistArtwork = await Art.createWishlist(req.body)
+
+    } catch (err){
+
+    }
+}
+
 
 
 

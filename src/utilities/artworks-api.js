@@ -14,3 +14,7 @@ export async function getAll() {
 export async function createArtwork(data) {
   return sendRequest(BASE_URL, "POST", data )
 }
+
+export async function createWishlist(data) {
+  return sendRequest(BASE_URL, "POST", data)
+}

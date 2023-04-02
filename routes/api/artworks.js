@@ -14,6 +14,8 @@ router.get('/search', artworkCtrl.searchApi )
 
 router.post('/', artworkCtrl.create)
 
+router.post('/')
+
 //router.post('/profile', artworkCtrl.addToCollection)
 
 module.exports = router; 

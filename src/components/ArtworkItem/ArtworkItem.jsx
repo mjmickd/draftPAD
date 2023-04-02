@@ -3,6 +3,8 @@ import * as collectionsAPI from "../../utilities/collections-api";
 import './ArtworkItem.css';
 
 
+
+
 export default function ArtworkItem({artwork, showButton}) {
     const image1 = "https://www.artic.edu/iiif/2/"
     const image3 = "/full/843,/0/default.jpg";
@@ -23,24 +25,42 @@ export default function ArtworkItem({artwork, showButton}) {
     }
 
     async function handleAddToCollection() {
-    const formData = {
-        name: artwork.title,
-        image: imageURL, 
-        apiID: artwork.id,
-        artist: artwork.artist_title,
-        yearCreated: artwork.date_end,
-        styleTitle: artwork.style_title,
-        typeOfArt: artwork.medium_display,
-        size: artwork.dimensions, 
-        }
+        const formData = {
+            name: artwork.title,
+            image: imageURL, 
+            apiID: artwork.id,
+            artist: artwork.artist_title,
+            yearCreated: artwork.date_end,
+            styleTitle: artwork.style_title,
+            typeOfArt: artwork.medium_display,
+            size: artwork.dimensions, 
+            }
         const newPiece = await artworksAPI.createArtwork(formData)
         // const myCollection = await artworksAPI.createArtwork(``)
-        console.log(newPiece)
-        const addedCollection = await collectionsAPI.addToCollection()
+        console.log(newPiece, "is this it?")
+       
+
+        // const addedCollection = await collectionsAPI.addToCollection()
     }
+
+    // async function handleAddPieceToCollection() {
+    //     const [newPiece, setNewPiece] = 
+
+    // }
     
 
-    function handleAddToWishlist() {
+    async function handleAddToWishlist() {
+        const formData = {
+            name: artwork.title,
+            image: imageURL, 
+            apiID: artwork.id,
+            artist: artwork.artist_title,
+            yearCreated: artwork.date_end,
+            styleTitle: artwork.style_title,
+            typeOfArt: artwork.medium_display,
+            size: artwork.dimensions, 
+        }
+        const newWish = await artworksAPI.createWishlist(formData)
 
     }
     
