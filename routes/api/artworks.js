@@ -9,12 +9,13 @@ router.get('/', artworkCtrl.index)
 //router.get('/profile', ensureLoggedIn, artworkCtrl.addToFavorites)
 //GET/ api/artworks (Get artwork from Database via id)
 
-
+// search API for a specific artwork 
 router.get('/search', artworkCtrl.searchApi )
 
+// create and artwork to add to your collection 
 router.post('/', artworkCtrl.create)
 
-router.post('/')
+
 
 //router.post('/profile', artworkCtrl.addToCollection)
 

@@ -1,9 +1,12 @@
-import { useState } from "react";
+
+import { getArtworkById } from "../../utilities/artworks-api"
+import * as collectionsAPI from "../../utilities/collections-api";
 
 
+export default function ProfilePage({collection}) {
 
-export default function ProfilePage({Collection}) {
 
+    async function collectionItem({})
 
     // async function getCollection() {
     //     const newPiece = await ordersAPI.getCart();
@@ -16,7 +19,7 @@ export default function ProfilePage({Collection}) {
         <>
         <h1>Profile Page</h1>
         <form>
-
+        getArtworkById = {getArtworkById}
         </form>
         </>
     )

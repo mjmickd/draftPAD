@@ -1,13 +1,40 @@
-// Collection = require('../../models/collection');
+ Collection = require('../../models/collection');
 // const CHICAGO_API_URL = 'https://api.artic.edu/api/v1/artworks'
 
 
 
 
 
-// module.exports = {
-//     addToFavorites,
-// },
+module.exports = {
+   addArtToCollection,
+   viewCollection, 
+}
+
+async function addArtToCollection(req,res) {
+    try {
+        const userCollection = await Collection.findOne({user: req.user._id});
+        console.log(userCollection, "add to art collection")
+        userCollection.myCollection.push(req.params.aid)
+        await userCollection.save()
+        res.json(userCollection);
+    } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
+    }
+    
+}
+
+async function viewCollection(req, res) {
+    try {
+        const allCollection = await Collection.find({user: req.user});
+        console.log(viewCollection)
+        
+
+    } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
+    }
+}
 
 // async function addToFavorites(req,res) {
 //     try { 

@@ -15,6 +15,10 @@ export async function createArtwork(data) {
   return sendRequest(BASE_URL, "POST", data )
 }
 
+export async function getArtworkById(_id){
+  return sendRequest(`${BASE_URL}/${_id}`)
+}
+
 export async function createWishlist(data) {
   return sendRequest(BASE_URL, "POST", data)
 }

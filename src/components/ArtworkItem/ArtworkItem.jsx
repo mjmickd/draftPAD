@@ -5,7 +5,7 @@ import './ArtworkItem.css';
 
 
 
-export default function ArtworkItem({artwork, showButton}) {
+export default function ArtworkItem({artwork, setCollection, showButton}) {
     const image1 = "https://www.artic.edu/iiif/2/"
     const image3 = "/full/843,/0/default.jpg";
     const image2 = artwork.image_id;
@@ -36,33 +36,35 @@ export default function ArtworkItem({artwork, showButton}) {
             size: artwork.dimensions, 
             }
         const newPiece = await artworksAPI.createArtwork(formData)
-        // const myCollection = await artworksAPI.createArtwork(``)
-        console.log(newPiece, "is this it?")
+        const userCollection = await collectionsAPI.addArtToCollection(newPiece._id)
+        setCollection(userCollection)
+        console.log(userCollection)
        
 
         // const addedCollection = await collectionsAPI.addToCollection()
     }
 
     // async function handleAddPieceToCollection() {
-    //     const [newPiece, setNewPiece] = 
+    //     const [newPiece, setNewPiece] = useState()
 
     // }
     
 
-    async function handleAddToWishlist() {
-        const formData = {
-            name: artwork.title,
-            image: imageURL, 
-            apiID: artwork.id,
-            artist: artwork.artist_title,
-            yearCreated: artwork.date_end,
-            styleTitle: artwork.style_title,
-            typeOfArt: artwork.medium_display,
-            size: artwork.dimensions, 
-        }
-        const newWish = await artworksAPI.createWishlist(formData)
+    // async function handleAddToWishlist() {
+    //     const formData = {
+    //         name: artwork.title,
+    //         image: imageURL, 
+    //         apiID: artwork.id,
+    //         artist: artwork.artist_title,
+    //         yearCreated: artwork.date_end,
+    //         styleTitle: artwork.style_title,
+    //         typeOfArt: artwork.medium_display,
+    //         size: artwork.dimensions, 
+    //     }
+    //     const newWish = await artworksAPI.createWishlist(formData)
+    //     const userWishlist = await 
 
-    }
+    // }
     
     return (
         <div className="ArtForm">
