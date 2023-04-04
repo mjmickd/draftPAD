@@ -22,3 +22,7 @@ export async function getArtworkById(_id){
 export async function createWishlist(data) {
   return sendRequest(BASE_URL, "POST", data)
 }
+
+export async function deleteArtwork(artworkId) {
+  return sendRequest(`${BASE_URL}/${artworkId}`, "DELETE")
+}

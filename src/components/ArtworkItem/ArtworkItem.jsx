@@ -12,15 +12,15 @@ export default function ArtworkItem({artwork, setCollection, showButton}) {
     const imageURL = `${image1}${image2}${image3}`
 
 
-    console.log(artwork.image_id, "testing null")
+    // console.log(artwork.image_id, "testing null")
     if (artwork.image_id === null) return null
 
-    console.log(`${image1}${image2}${image3}`, artwork.title)
+    // console.log(`${image1}${image2}${image3}`, artwork.title)
 
     const placeholder =  "https://e7.pngegg.com/pngimages/49/270/png-clipart-happy-emoji-smiley-emoticon-black-and-white-computer-icons-smiley-face-s-white-face-thumbnail.png"
     
     function onImageError (evt) {
-        console.log('image error')
+        // console.log('image error')
         evt.target.src = placeholder;
     }
 
@@ -37,9 +37,10 @@ export default function ArtworkItem({artwork, setCollection, showButton}) {
             }
         const newPiece = await artworksAPI.createArtwork(formData)
         const userCollection = await collectionsAPI.addArtToCollection(newPiece._id)
-        setCollection(userCollection)
-        console.log(userCollection)
-       
+        setCollection(userCollection.myCollection)
+        // console.log(userCollection)
+
+
 
         // const addedCollection = await collectionsAPI.addToCollection()
     }
@@ -86,7 +87,7 @@ export default function ArtworkItem({artwork, setCollection, showButton}) {
         {showButton ? 
         <>
             <button className="art-btn" onClick={() => handleAddToCollection()}>In My Collection</button>
-            <button className="art-btn" onClick={() => handleAddToWishlist()}>Add To Wishlist</button>
+            {/* <button className="art-btn" onClick={() => handleAddToWishlist()}>Add To Wishlist</button> */}
         </>
         :
         ""

@@ -7,7 +7,7 @@
 
 module.exports = {
    addArtToCollection,
-   viewCollection, 
+   getMyCollection, 
 }
 
 async function addArtToCollection(req,res) {
@@ -16,7 +16,8 @@ async function addArtToCollection(req,res) {
         console.log(userCollection, "add to art collection")
         userCollection.myCollection.push(req.params.aid)
         await userCollection.save()
-        res.json(userCollection);
+        const allCollection = await Collection.findOne({user: req.user}).populate('myCollection').exec();
+        res.json(allCollection);
     } catch (err) {
         console.log(err)
         res.status(400).json(err);
@@ -24,12 +25,11 @@ async function addArtToCollection(req,res) {
     
 }
 
-async function viewCollection(req, res) {
+async function getMyCollection(req, res) {
     try {
-        const allCollection = await Collection.find({user: req.user});
-        console.log(viewCollection)
-        
-
+        const allCollection = await Collection.findOne({user: req.user}).populate('myCollection').exec();
+        console.log(allCollection)
+        res.status(200).json(allCollection)
     } catch (err) {
         console.log(err)
         res.status(400).json(err);

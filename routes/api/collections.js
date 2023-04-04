@@ -5,6 +5,6 @@ const collectionCtrl = require('../../controllers/api/collections');
 
 router.put('/:aid/artwork', collectionCtrl.addArtToCollection);
 
-router.get('/', collectionCtrl.viewCollection);
+router.get('/', collectionCtrl.getMyCollection);
 
 module.exports = router;

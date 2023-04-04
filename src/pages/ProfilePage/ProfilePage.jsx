@@ -1,26 +1,24 @@
 
+import CollectionItem from "../../components/CollectionItem/CollectionItem";
 import { getArtworkById } from "../../utilities/artworks-api"
 import * as collectionsAPI from "../../utilities/collections-api";
 
 
-export default function ProfilePage({collection}) {
+export default function ProfilePage({collection, setCollection}) {
+    console.log(collection)
+   const collectionItems = collection.map((artwork) => (
+        <CollectionItem  key={artwork._id} artwork={artwork} setCollection={setCollection}/>
+    ))
 
 
-    async function collectionItem({})
-
-    // async function getCollection() {
-    //     const newPiece = await ordersAPI.getCart();
-    //     setCart(cart);
-    //   }
-    //   getCart();
-    // }, []);
+   
 
     return (
         <>
         <h1>Profile Page</h1>
-        <form>
-        getArtworkById = {getArtworkById}
-        </form>
+        <div>
+            {collectionItems}
+        </div>
         </>
     )
 }

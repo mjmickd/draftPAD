@@ -7,6 +7,7 @@ module.exports={
     show,
     searchApi,
     create,
+    deleteArtwork,
     // addToFavorites,
 };
 
@@ -45,14 +46,17 @@ async function create(req,res) {
     }
 }
 
-async function createWishlist(req,res) {
+async function deleteArtwork(req, res) {
     try {
-        const newWishlistArtwork = await Art.createWishlist(req.body)
-
-    } catch (err){
-
+        await Art.findByIdAndDelete(req.params.id);
+        const allCollection = await Collection.findOne({user: req.user}).populate('myCollection').exec();
+        res.status(200).json(allCollection)
+    } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
     }
 }
+
 
 
 

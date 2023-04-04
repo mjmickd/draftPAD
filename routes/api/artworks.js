@@ -15,6 +15,8 @@ router.get('/search', artworkCtrl.searchApi )
 // create and artwork to add to your collection 
 router.post('/', artworkCtrl.create)
 
+router.delete('/:id', artworkCtrl.deleteArtwork)
+
 
 
 //router.post('/profile', artworkCtrl.addToCollection)

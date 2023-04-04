@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import LandingPage from "../LandingPage/LandingPage";
@@ -8,11 +8,20 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
+import * as collectionAPI from "../../utilities/collections-api"
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [artInfo, setArtInfo] = useState([]);
   const [collection, setCollection] = useState([]);
+  
+  useEffect(function() {
+    async function getMyCollection () {
+      const myCollection = await collectionAPI.getMyCollection()
+      setCollection(myCollection.myCollection)
+    }
+    getMyCollection()
+  }, [])  
 
   return (
     <main className="App">
@@ -23,7 +32,7 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/" element={<LandingPage />} />
               <Route path="/art" element={<ArtListPage  artInfo={artInfo} setCollection={setCollection}/>} />
-              <Route path="/profile" element={<ProfilePage collection={collection} />} />
+              <Route path="/profile" element={<ProfilePage collection={collection} setCollection={setCollection} />} />
               <Route path="/profile/wishlist" element={<WishlistPage />} />
             </Routes>
           </>
