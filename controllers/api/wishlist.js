@@ -1,1 +1,0 @@
-Wishlist = require('../../models/wishlist');

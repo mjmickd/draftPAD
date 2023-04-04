@@ -7,17 +7,14 @@
 A website that let's you add art to your collection and then borrow from other collections. 
 </div>
 
-<!-- # 🌟 Screenshots
-<img src="https://i.imgur.com/Grz2E1x.png"> 
-<img src="https://i.imgur.com/JuhkJys.png">
-<img src="https://i.imgur.com/aLVyxkx.png">
-<img src="https://i.imgur.com/EYpqYMW.png">
-<img src="https://i.imgur.com/lypKPIx.png">
-<img src="https://i.imgur.com/zZMVTpt.png"> -->
+# 🌟 Screenshots
+<img src="https://i.imgur.com/3o03YHf.png"> 
+<img src="https://i.imgur.com/JHq8aqa.png">
+
 
 
 # 💻 Technologies Used
-<!-- - ![Express]
+- ![Express]
 - ![JavaScript]
 - ![VSCode]
 - ![React]
@@ -26,27 +23,26 @@ A website that let's you add art to your collection and then borrow from other c
 - ![Heroku]
 - ![Github]
 - ![Axios]
-- ![jsonwebtoken] -->
+- ![jsonwebtoken]
 
 
 
 
 # 📝 Getting Started 
 - On the home page you're able to learn about what the app does while then being able to search within the Nav Bar 
-- Explore listings that arcbnb offers.
-- Find homes based upon the great features that they possess.  
-- Sign up/login in order to create a booking.
-- View bookings through user drop-down menu. 
-- Within your booking detail's page, you're able to udpate/cancel your upcoming trip. 
+- explore various art pieces via the search bar and then be able to add them to your collection 
+- after it is in your colleciton, you're able to delete them from your collection as well 
+- Sign up/login in order to create a collection 
+
  
 
-###  [Checkout arcbnb Trello Board] ()
-
+###  [Checkout draftPAD Trello Board] ()
+(https://trello.com/b/1En61kys/draftpad)
 
 # 🌀 Upcoming Features
 - Adding a wishlist 
-- Ability to submit your own listing 
-- Google maps API 
-- Ability to add reviews
-- Expanding outside of L.A. 
-- Adding a search bar 
+- Ability to rent a piece of artwork 
+- Adding more than one collection (ie. Modern Art Collecton, a specific artist collection etc)
+- Ability to rate the piece of art based upon both whether or not you like it but also how god of shape the said art piece may be in. 
+- expanding the search availabilty to use more than the one API 
+-work on styling of the application 

@@ -1,4 +1,4 @@
-
+import "./NavBar.css"
 
 import { useState } from "react";
 import { Link } from 'react-router-dom';
@@ -30,8 +30,6 @@ export default function NavBar({ user, setUser, setArtInfo }) {
       &nbsp; | &nbsp;
       <Link to="/profile">{user.name} profile</Link>
       &nbsp; | &nbsp;
-      <Link to="/profile/wishlist">{user.name} wishlist</Link>
-      &nbsp;&nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;
      <form onSubmit={handleSubmit}> <input type="text" value={formData} onChange={(evt)=>setFormData(evt.target.value)}/> <button type="submit">search</button></form>

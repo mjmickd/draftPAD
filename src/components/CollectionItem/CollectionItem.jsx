@@ -13,7 +13,12 @@ export default function CollectionItem({artwork, setCollection}){
     
     return (
         <>
-        {artwork.name}
+        <form>
+            <div>
+                {artwork.name}
+            </div>
+        </form>
+        {}
 
         <button onClick={() => handleDeleteFromCollection(artwork._id)}>delete</button>
         </>

@@ -5,7 +5,6 @@ import LandingPage from "../LandingPage/LandingPage";
 import AuthPage from '../AuthPage/AuthPage';
 import ArtListPage from '../ArtListPage/ArtListPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import WishlistPage from '../WishlistPage/WishlistPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 import * as collectionAPI from "../../utilities/collections-api"
@@ -33,7 +32,6 @@ export default function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/art" element={<ArtListPage  artInfo={artInfo} setCollection={setCollection}/>} />
               <Route path="/profile" element={<ProfilePage collection={collection} setCollection={setCollection} />} />
-              <Route path="/profile/wishlist" element={<WishlistPage />} />
             </Routes>
           </>
           :

@@ -76,8 +76,8 @@ export default function ArtworkItem({artwork, setCollection, showButton}) {
         style={{width:'20vw', height:'20vw', alignItems:'left', }}
         onError={onImageError}
         />
+            <h2>{artwork.artist_title}</h2>
         <ul>
-            <li>{artwork.artist_title}</li>
             <li>{artwork.date_end}</li>
             <li>{artwork.style_title}</li>
             <li>{artwork.medium_display}</li>
